@@ -90,7 +90,7 @@ function madLibsEdit(story) {
             input.setAttribute('class', 'form-control d-inline-flex col-lg-2 mt-1')
             input.setAttribute('id', `inputId${pos}`)
             input.setAttribute('placeholder', `${pos}`)
-            input.setAttribute('oninput', 'printInput(' + pos + ')')
+            input.setAttribute('oninput', 'printInput(' + pos + ')') //adding inputevent for updating valuve creates function in line 126
             p.appendChild(input)
         } else {
             //turning array indexes into text
