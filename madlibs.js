@@ -113,9 +113,10 @@ function madLibsPreview(story) {
                 '<span  id="privewOutput"' +
                 i +
                 '' +
-                '>'
-
-            '</span>' + ' '
+                '>' +
+                story[i].word +
+                '</span>' +
+                ' '
         } else {
             madLibsPreview.innerHTML = madLibsPreview.innerHTML + ' ' + story[i].word
         }
@@ -133,4 +134,5 @@ getRawStory()
     .then((processedStory) => {
         madLibsEdit(processedStory)
         madLibsPreview(processedStory)
+        printInput(processedStory)
     })
