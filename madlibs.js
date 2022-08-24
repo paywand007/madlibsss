@@ -90,7 +90,7 @@ function madLibsEdit(story) {
             input.setAttribute('class', 'form-control d-inline-flex col-lg-2 mt-1')
             input.setAttribute('id', `inputId${pos}`)
             input.setAttribute('placeholder', `${pos}`)
-            input.setAttribute('onclick', 'printInput(' + pos + '})})')
+            input.setAttribute('oninput', 'printInput(' + pos + ')')
             p.appendChild(input)
         } else {
             //turning array indexes into text
@@ -124,9 +124,9 @@ function madLibsPreview(story) {
 }
 
 function printInput(idNumbers) {
-    let wordInput = document.querySelector('#inputId')
-    let wordOutput = document.querySelector('#privewOutput')
-    wordOutput.innerHTML = wordInput.value
+    let wordInput = document.querySelector('#inputId', idNumbers)
+    let wordOutput = document.querySelector('#privewOutput', idNumbers)
+    wordOutput.textContent = wordInput.value
 }
 
 getRawStory()
@@ -134,5 +134,4 @@ getRawStory()
     .then((processedStory) => {
         madLibsEdit(processedStory)
         madLibsPreview(processedStory)
-        printInput(processedStory)
     })
